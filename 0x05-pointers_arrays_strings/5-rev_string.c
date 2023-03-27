@@ -23,6 +23,7 @@ void rev_string(char *s)
 int _strlen(char *s)
 {
 	int	i;
+
 	if (!s)
 		return (0);
 	i = 0;
