@@ -8,20 +8,17 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, sum1 = 0, sum2 = 0;
+	int i, j, p, l = 0, r = 0;
 
-	/* Calculate the sum of the main diagonal and the secondary diagonal*/
 	for (i = 0; i < size; i++)
 	{
-	sum1 += *(a + i * size + i);
+		p = (i * size) + i;
+		l += *(a + p);
 	}
 	for (j = 0; j < size; j++)
 	{
-	sum2 += *(a + j * size + (size - 1 - j));
+		p = (j * size) + (size - 1 - j);
+		r += *(a + p);
 	}
-
-	/* Print the sum of the two diagonals*/
-	printf("%d\n", sum1);
-	printf("%d\n", sum2);
+	printf("%i, %i\n", l, r);
 }
-
