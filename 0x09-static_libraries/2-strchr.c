@@ -1,18 +1,22 @@
 #include "main.h"
+#include<stddef.h>
+
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
+ * _strchr - entry point of function
+ * @s: input value
+ * @c: input value
+ * Return: 0 on success
  */
-int _strlen(char *s)
+char *_strchr(char *s, char c)
 {
-	int longi = 0;
+	int j = 0;
 
-	while (*s != '\0')
+	for (; s[j] >= '\0'; j++)
 	{
-		longi++;
-		s++;
+		if (s[j] == c)
+		{
+			return (&s[j]);
+		}
 	}
-
-	return (longi);
+	return (0);
 }
